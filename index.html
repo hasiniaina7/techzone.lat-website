@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WIFI Zone - Captive portal</title>
+        <!-- <link rel="stylesheet" href="index.css" type="text/css"> -->
+        <style>
+            @font-face {
+                font-family: "Anton";
+                src: url("Anton-Regular.ttf") format("truetype");
+            }
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            html,
+            body {
+                height: 100%;
+            }
+            body.portal {
+                text-align: center;
+                margin: 0;
+                height: 100vh;
+                font-size: 15px;
+                font-weight: 400;
+                color: #fff;
+                background: linear-gradient(
+                    8deg,
+                    rgba(35, 76, 245, 1) 0%,
+                    rgba(207, 99, 232, 1) 52%,
+                    rgba(133, 87, 229, 1) 100%
+                );
+                font-family: "Anton", sans-serif;
+            }
+            .logo-img {
+                margin-top: 20px;
+            }
+            .exterieur {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 5rem;
+                padding: 1.5rem 0;
+            }
+            .pub-img {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body class="portal">
+        <div class="logo-img">
+            <img class="logo" src="wifi-zone-logo.png" alt="Logo" />
+        </div>
+        <div class="exterieur">
+            <span class="text">Bienvenue</span>
+        </div>
+    </body>
+</html>
