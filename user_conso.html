@@ -10,30 +10,22 @@
     <div class="logo-img">
       <img class="logo" src="wifi-zone-logo.png" alt="Logo" />
     </div>
-    <div class="search-section">
-      <input
-        type="search"
-        placeholder="Rechercher un marchand..."
-        id="searchInput"
-      />
-      <button onclick="performSearch()">Rechercher</button>
-    </div>
     <h1 class="titre">Information consomation</h1>
     <div class="container">
       <div class="cards">
         <div class="card">
-          <h3>Marchand</h3>
-          <p>Marchand sélectionné.</p>
-          <div class="value">S75LX</div>
+          <h3>Voucher</h3>
+          <p>Voucher utilisé.</p>
+          <div class="value">2Go</div>
         </div>
         <div class="card">
-          <h3>Consommation totale</h3>
-          <p>Voucher télécharger aujourd'hui.</p>
+          <h3>Consommé</h3>
+          <p>Data consommé(s)</p>
           <div class="value">12</div>
         </div>
         <div class="card">
-          <h3>Montant Vendu</h3>
-          <p>Montant total des ventes réalisées.</p>
+          <h3>Restant</h3>
+          <p>Data restant(s)</p>
           <div class="value">18,000 Ar</div>
         </div>
       </div>
@@ -45,17 +37,5 @@
         <p>🖥️ Tous droits réservés.</p>
       </div>
     </footer>
-
-    <script>
-      function performSearch() {
-        const query = document.getElementById("searchInput").value;
-        if (query.trim()) {
-          alert(`Recherche lancée pour : ${query}`);
-          // Ajoutez ici la logique pour connecter avec le backend ou afficher des résultats.
-        } else {
-          alert("Veuillez entrer un terme de recherche.");
-        }
-      }
-    </script>
   </body>
 </html>
