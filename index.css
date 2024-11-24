@@ -48,22 +48,23 @@ body {
 .logo-img {
   margin-top: 20px;
   z-index: 1;
-  transition: all 0.4s ease-in-out; 
+  transition: all 0.4s ease-in-out;
 }
 
 .logo-fixed {
   position: fixed;
-  top: -15px; 
+  top: -15px;
   left: 5px;
   width: 66px;
   z-index: 10;
   transition: all 0.4s ease-in-out;
   transform: scale(0.8);
-  opacity: 0.9; 
+  opacity: 0.9;
 }
 
 .logo {
   width: 100%;
+  max-width: 200px;
 }
 
 .search-section {
@@ -103,7 +104,7 @@ body {
   font-size: 3rem;
   font-family: "Anton";
   letter-spacing: 4px;
-  margin: 7rem auto 0rem;
+  margin: 1.5rem auto 0rem;
   z-index: 1;
 }
 .cards {

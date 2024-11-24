@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <title>Recherche et Informations</title>
+    <title>Informations consomations</title>
+    <style>
+      .titre-scrol {
+        margin: 7rem auto 0rem !important;
+      }
+    </style>
   </head>
   <body class="portal">
     <div class="logo-img">
@@ -56,14 +61,16 @@
           alert("Veuillez entrer un terme de recherche.");
         }
       }
-
       // *****************************************
       const logoImg = document.querySelector(".logo-img");
+      const titre = document.querySelector(".titre");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
           logoImg.classList.add("logo-fixed");
+          titre.classList.add("titre-scrol");
         } else {
           logoImg.classList.remove("logo-fixed");
+          titre.classList.remove("titre-scrol");
         }
       });
     </script>
