@@ -10,6 +10,7 @@
     <div class="logo-img">
       <img class="logo" src="wifi-zone-logo.png" alt="Logo" />
     </div>
+    <h1 class="titre">Information consomation</h1>
     <div class="search-section">
       <input
         type="search"
@@ -18,7 +19,6 @@
       />
       <button onclick="performSearch()">Rechercher</button>
     </div>
-    <h1 class="titre">Information consomation</h1>
     <div class="container">
       <div class="cards">
         <div class="card">
@@ -56,6 +56,20 @@
           alert("Veuillez entrer un terme de recherche.");
         }
       }
+
+      // *****************************************
+      const logoImg = document.querySelector(".logo-img");
+
+      // Écouter l'événement de défilement
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          // Appliquer la classe réduite si l'utilisateur a défilé
+          logoImg.classList.add("logo-fixed");
+        } else {
+          // Rétablir la classe normale si l'utilisateur revient en haut
+          logoImg.classList.remove("logo-fixed");
+        }
+      });
     </script>
   </body>
 </html>

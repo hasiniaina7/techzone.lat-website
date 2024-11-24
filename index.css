@@ -44,13 +44,29 @@ body {
     rgba(133, 87, 229, 1) 100%
   );
 }
+/* Logo initial */
 .logo-img {
   margin-top: 20px;
   z-index: 1;
+  transition: all 0.4s ease-in-out; /* Transition fluide */
 }
+
+/* Logo réduit et fixé en haut à gauche */
+.logo-fixed {
+  position: fixed;
+  top: -15px; /* Plus proche du haut */
+  left: 5px; /* Plus proche du côté gauche */
+  width: 66px; /* Taille très réduite */
+  z-index: 10;
+  transition: all 0.4s ease-in-out; /* Animation fluide */
+  transform: scale(0.8); /* Optionnel si vous voulez un effet supplémentaire */
+  opacity: 0.9; /* Légère transparence */
+}
+
 .logo {
-  width: 200px;
+  width: 100%;
 }
+
 .search-section {
   margin: 40px 0 20px;
   display: flex;
@@ -89,7 +105,7 @@ body {
   font-size: 3rem;
   font-family: "Anton";
   letter-spacing: 4px;
-  margin: 1.5rem auto 3rem;
+  margin: 7rem auto 0rem;
   z-index: 1;
 }
 .cards {
