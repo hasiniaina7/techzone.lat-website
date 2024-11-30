@@ -16,22 +16,30 @@
       <img class="logo" src="wifi-zone-logo.png" alt="Logo" />
     </div>
     <h1 class="titre">Information consomation</h1>
+    <div class="search-section">
+      <input
+        type="search"
+        placeholder="Rechercher un marchand..."
+        id="searchInput"
+      />
+      <button onclick="performSearch()">Rechercher</button>
+    </div>
     <div class="container">
       <div class="cards">
         <div class="card">
-          <h3>Voucher</h3>
-          <p>Voucher utilisé.</p>
-          <div class="value">2Go</div>
+          <h3>Marchand</h3>
+          <p>Marchand sélectionné.</p>
+          <div class="value">S75LX</div>
         </div>
         <div class="card">
-          <h3>Consommé</h3>
-          <p>Data consommé(s)</p>
-          <div class="value">200 Mo</div>
+          <h3>Téléchargement</h3>
+          <p>Voucher télécharger aujourd'hui.</p>
+          <div class="value">12</div>
         </div>
         <div class="card">
-          <h3>Restant</h3>
-          <p>Data restant(s)</p>
-          <div class="value">1,8 Go</div>
+          <h3>Montant Vendu</h3>
+          <p>Montant total des ventes réalisées.</p>
+          <div class="value">18,000 Ar</div>
         </div>
       </div>
     </div>
@@ -44,6 +52,16 @@
     </footer>
 
     <script>
+      function performSearch() {
+        const query = document.getElementById("searchInput").value;
+        if (query.trim()) {
+          alert(`Recherche lancée pour : ${query}`);
+          // Ajoutez ici la logique pour connecter avec le backend ou afficher des résultats.
+        } else {
+          alert("Veuillez entrer un terme de recherche.");
+        }
+      }
+      // *****************************************
       const logoImg = document.querySelector(".logo-img");
       const titre = document.querySelector(".titre");
       window.addEventListener("scroll", () => {

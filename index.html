@@ -3,11 +3,162 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Informations consomations</title>
+    <title>Informations Consommation</title>
     <style>
-      .titre-scrol {
-        margin: 7rem auto 0rem !important;
+      @font-face {
+        font-family: "Anton";
+        src: url("./Fonts/Anton-Regular.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("./Fonts/Montserrat-Regular.ttf") format("truetype");
+      }
+      :root {
+        --bg-gradient-start: #6a11cb;
+        --bg-gradient-end: #2575fc;
+        --card-bg: rgba(255, 255, 255, 0.1);
+        --primary-color: #4ecdc4;
+        --text-color: #ffffff;
+        --shadow-color: rgba(0, 0, 0, 0.2);
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: auto;
+        position: relative;
+      }
+      body {
+        text-align: center;
+        margin: 0;
+        font-size: 15px;
+        font-weight: 400;
+        color: #fff;
+        font-family: "Anton", sans-serif;
+        display: flex;
+        background-repeat: no-repeat;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(
+          8deg,
+          rgba(35, 76, 245, 1) 0%,
+          rgba(207, 99, 232, 1) 52%,
+          rgba(133, 87, 229, 1) 100%
+        );
+        min-height: 100vh;
+        padding: 2rem;
+      }
+      .logo-img {
+        margin-top: 20px;
+        z-index: 1;
+        transition: all 0.4s ease-in-out;
+      }
+      .logo {
+        width: 100%;
+        max-width: 200px;
+      }
+      .container {
+        font-family: "Montserrat";
+        width: 90%;
+        max-width: 1200px;
+        z-index: 1;
+      }
+      .titre {
+        font-size: 3rem;
+        font-family: "Anton";
+        letter-spacing: 4px;
+        margin: 1.5rem auto 0rem;
+        z-index: 1;
+      }
+      .container {
+        width: 100%;
+        max-width: 600px;
+        z-index: 10;
+      }
+
+      .card {
+        background: var(--card-bg);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 15px 35px var(--shadow-color);
+        transition: transform 0.3s ease;
+      }
+
+      .circular-progress {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin: 2rem auto;
+        border-radius: 50%;
+        background: conic-gradient(
+          var(--primary-color) 0deg,
+          rgba(255, 255, 255, 0.2) 0deg
+        );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 0 0 20px var(--shadow-color);
+      }
+
+      .circular-progress::before {
+        content: "";
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        backdrop-filter: blur(10px);
+      }
+
+      .progress-value {
+        position: relative;
+        z-index: 1;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-color);
+        text-shadow: 0 5px 10px var(--shadow-color);
+      }
+
+      .progress-info {
+        font-size: 1.3rem;
+        color: rgb(255, 255, 255);
+        margin-top: 1rem;
+      }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(31, 31, 31, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        font-size: 0.9rem;
+      }
+      @media (max-width: 600px) {
+        .card {
+          padding: 1.5rem;
+        }
+
+        .circular-progress {
+          width: 200px;
+          height: 200px;
+        }
+
+        .titre {
+          font-size: 2rem;
+        }
       }
     </style>
   </head>
@@ -15,64 +166,36 @@
     <div class="logo-img">
       <img class="logo" src="wifi-zone-logo.png" alt="Logo" />
     </div>
-    <h1 class="titre">Information consomation</h1>
-    <div class="search-section">
-      <input
-        type="search"
-        placeholder="Rechercher un marchand..."
-        id="searchInput"
-      />
-      <button onclick="performSearch()">Rechercher</button>
-    </div>
+    <h1 class="titre" style="margin-bottom: 2rem">Informations Consommation</h1>
     <div class="container">
-      <div class="cards">
-        <div class="card">
-          <h3>Marchand</h3>
-          <p>Marchand sélectionné.</p>
-          <div class="value">S75LX</div>
+      <div class="card">
+        <div class="circular-progress" id="circular-progress">
+          <span class="progress-value">2 Go</span>
         </div>
-        <div class="card">
-          <h3>Consommation totale</h3>
-          <p>Voucher télécharger aujourd'hui.</p>
-          <div class="value">12</div>
-        </div>
-        <div class="card">
-          <h3>Montant Vendu</h3>
-          <p>Montant total des ventes réalisées.</p>
-          <div class="value">18,000 Ar</div>
-        </div>
+        <p class="progress-info" id="progress-info">Restant : 45%</p>
       </div>
     </div>
-
-    <footer class="exterieur">
-      <div class="footer-bottom">
-        <p>CopyRight &copy; 2024 Tech Zone</p>
-        <p>🖥️ Tous droits réservés.</p>
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© 2024 Tech Zone</p>
+        <p>🖥️ Tous droits réservés</p>
       </div>
     </footer>
-
     <script>
-      function performSearch() {
-        const query = document.getElementById("searchInput").value;
-        if (query.trim()) {
-          alert(`Recherche lancée pour : ${query}`);
-          // Ajoutez ici la logique pour connecter avec le backend ou afficher des résultats.
-        } else {
-          alert("Veuillez entrer un terme de recherche.");
-        }
+      function updateCircularProgress(remaining, total) {
+        const progressElement = document.getElementById("circular-progress");
+        const progressInfo = document.getElementById("progress-info");
+
+        const percentage = Math.round((remaining / total) * 100);
+
+        progressElement.style.background = `conic-gradient(#2692C8C9 ${
+          percentage * 3.6
+        }deg, rgba(255,255,255,0.3) ${percentage * 3.6}deg)`;
+        progressInfo.textContent = `Restant : ${100 - percentage}%`;
       }
-      // *****************************************
-      const logoImg = document.querySelector(".logo-img");
-      const titre = document.querySelector(".titre");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          logoImg.classList.add("logo-fixed");
-          titre.classList.add("titre-scrol");
-        } else {
-          logoImg.classList.remove("logo-fixed");
-          titre.classList.remove("titre-scrol");
-        }
-      });
+
+      // Exemple d'utilisation : mettre à jour avec 1.8 Go restant sur 4 Go
+      updateCircularProgress(1.9, 2);
     </script>
   </body>
 </html>
